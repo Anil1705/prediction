@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color Analysis</title>
+    <style>
+        .ball {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px;
+        }
+        .red-ball {
+            background-color: red;
+            color: white;
+        }
+        .green-ball {
+            background-color: green;
+            color: white;
+        }
+        .container {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+		.warning {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Analysis</h1>
+    <form method="POST">
+        <label for="url">Enter URL:</label>
+        <input type="text" name="url" value="https://cooe.in/WinGoTrend/#/?r=1&t=P" required>
+        <button type="submit">Analyze Colors</button>
+    </form>
+
+    <div class="container">
+        {% if suggested_color %}
+            <p>Suggested Next Color: <span class="ball {% if suggested_color == 'red' %}red-ball{% else %}green-ball{% endif %}"></span></p>
+        {% endif %}
+
+        <p class="ball {% if suggested_color == 'red' %}red-ball{% else %}green-ball{% endif %}">{{ random_number }}</p>
+    </div>
+	<p>How to use:</p>
+    <ol>
+        <li>Click "Analyze" to analyze colors.</li>
+        <li>Check the suggested color results.</li>
+		<li>if it wrong Please change the playing startegy.</li>
+		<li>Please play carefully at your own risk</li>
+		
+    </ol>
+	 <p class="warning">THIS IS USING FOR PREDICTION PURPOSE, DON'T DEPEND ON THIS. MAKE YOUR OWN THOUGHT.</p>
+
+</body>
+</html>
